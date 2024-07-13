@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active">
+            <img src="./assets/logo.png" alt="logo" width="100px" height="70px">
+            <span style="font-size:26px;" class="text-light">Bookkest</span>
+        </a>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/features" routerLinkActive="active">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/pricing" routerLinkActive="active">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact us</a>
+            </li>
+            <ng-container *ngIf="accountService.currentUser$ | async">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/books" routerLinkActive="active">Books</a>
+                </li>
+            </ng-container>
+        </ul>
+
+        <div *ngIf="(accountService.currentUser$ | async )  as user">
+            <a class="text-decoration-none mx-3 text-light">Welcome {{user.username | titlecase}}</a>
+            
+            <button class="btn btn-danger" type="button" (click)="logOut()">Log out</button>
+        </div>
+
+        <form *ngIf="!(accountService.currentUser$ | async )" #loginForm="ngForm" class="d-flex ms-auto" autocomplete="off" (ngSubmit)="login()">
+            <input 
+                name="username"
+                [(ngModel)]="model.username"
+                class="form-control me-2" 
+                type="text" 
+                placeholder="Username" >
+            <input 
+                name="password"
+                [(ngModel)]="model.password"
+                class="form-control me-2" 
+                type="password" 
+                placeholder="Password" >
+            <button class="btn btn-secondary me-2" type="submit">Login</button>
+            <button class="btn btn-info" type="button" (click)="loginDemo()">Demo</button>
+        </form>
+    </div>
+</nav>

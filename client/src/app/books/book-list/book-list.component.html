@@ -1,0 +1,70 @@
+<div class="container mt-5">
+    <h2 class="mb-4">My Book Collection</h2>
+  
+    <div class="d-flex justify-content-between mb-3">
+      <button class="btn btn-primary" (click)="togglePastMonthBooks()">
+        {{ showPastMonth ? 'Show All Books' : 'View Past Month' }}
+      </button>
+      <div *ngIf="showPastMonth">
+        <span class="badge bg-info">
+          {{ pagination?.totalItems }} book(s) added in the last 30 days
+        </span>
+      </div>
+      <button class="btn btn-success" routerLink="/books/add" >Add Book</button>
+    </div>
+  
+    <div *ngIf="showPastMonth && pastMonthBooks.length === 0" class="alert alert-info">
+      No books found in the last 30 days.
+    </div>
+    <div *ngIf="!showPastMonth && books.length === 0" class="alert alert-info">
+      No books found in your collection.
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4" *ngFor="let book of showPastMonth ? pastMonthBooks : books">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+            <p class="card-text">{{ book.description }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" 
+                        class="btn btn-sm btn-outline-primary" 
+                        routerLink="/books/{{book.id}}">View
+                </button>
+
+                <button type="button" 
+                        class="btn btn-sm btn-outline-success"
+                        routerLink="/books/edit/{{book.id}}">Edit
+                </button>
+
+                <button type="button" 
+                        class="btn btn-sm btn-outline-danger" 
+                        (click)="openConfirmationModal(book)">Delete
+                </button>
+              </div>
+              <button *ngIf="!book.isRead" type="button" class="btn btn-sm btn-dark" (click)="markAsRead(book)">Mark as Read</button>
+              <span *ngIf="book.isRead" class="badge bg-success">Done Reading</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center" *ngIf="pagination">
+    <pagination
+      [boundaryLinks]="true"
+      [totalItems]="pagination.totalItems"
+      [itemsPerPage]="pagination.itemsPerPage"
+      [maxSize]="10"
+      [(ngModel)]="pagination.currentPage"
+      (pageChanged)="pageChanged($event)"
+      previousText="&lsaquo;"
+      nextText="&rsaquo;"
+      firstText="&laquo;"
+      lastText="&raquo;">
+    </pagination>
+  </div>
+  

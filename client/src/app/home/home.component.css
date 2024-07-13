@@ -1,0 +1,45 @@
+/* .container {
+    margin-top: 2rem;
+  }
+  
+  .display-4 {
+    font-weight: 300;
+    color: #2c3e50;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  } */
+
+  .card {
+    transition: transform 0.2s;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+}
+
+.carousel-item {
+    transition: transform 0.2s ease-in-out;
+}
+
+  

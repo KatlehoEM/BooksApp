@@ -1,0 +1,54 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form (ngSubmit)="registerForm.valid && register()" [formGroup]="registerForm" autocomplete="off">
+          
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" 
+                    [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched"
+                    class="form-control" 
+                    formControlName="username">
+                <div class="invalid-feedback">Please enter a username</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" 
+                    [class.is-invalid]="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+                    class="form-control" 
+                    formControlName="email">
+                <div class="invalid-feedback" *ngIf="registerForm.get('email')?.hasError('required')">
+                    Please enter an email
+                </div>
+                <div class="invalid-feedback" *ngIf="registerForm.get('email')?.hasError('email')">
+                    Please enter a valid email
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" 
+                    [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+                    class="form-control" 
+                    formControlName="password">
+                    <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">
+                        Please enter a password
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">
+                        Password must be atleast 4 characters.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('maxlength')">
+                        Password must be at most 8 characters.
+                    </div>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                <button type="button" class="btn btn-secondary btn-lg" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

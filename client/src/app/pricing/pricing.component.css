@@ -1,0 +1,35 @@
+.card {
+    transition: transform 0.2s;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.list-unstyled {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}

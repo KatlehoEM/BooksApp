@@ -1,0 +1,109 @@
+<div class="container mt-5">
+    <!-- Welcome Section -->
+    <div *ngIf="!registerMode" class="text-center">
+        <h1 class="display-4">Welcome to Bookkest</h1>
+        <p class="lead">Your personal book collection tracker. Sign up now to manage your library!</p>
+        <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2">Register</button>
+    </div>
+
+    <!-- Registration Section -->
+    <div *ngIf="registerMode" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Register</h5>
+                        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Features</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-book-half fs-1 mb-3"></i>
+                        <h4 class="card-title">Track Your Books</h4>
+                        <p class="card-text">Keep an organized record of all your books, both physical and digital.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-journal-text fs-1 mb-3"></i>
+                        <h4 class="card-title">Customizable Categories</h4>
+                        <p class="card-text">Organize your collection with customizable categories and tags.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-share fs-1 mb-3"></i>
+                        <h4 class="card-title">Share with Friends</h4>
+                        <p class="card-text">Share your book collection with friends and see their recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">What Our Users Say</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body text-center">
+                                    <p class="card-text">"Bookkest has completely transformed how I manage my library. It's easy to use and incredibly efficient!"</p>
+                                    <p class="card-text"><small class="text-muted">- Alex P.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body text-center">
+                                    <p class="card-text">"I love being able to share my book collection with friends. The customizable categories are a game changer!"</p>
+                                    <p class="card-text"><small class="text-muted">- Jamie K.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body text-center">
+                                    <p class="card-text">"A must-have for any book lover! Bookkest makes managing my collection so much easier."</p>
+                                    <p class="card-text"><small class="text-muted">- Taylor R.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>

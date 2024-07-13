@@ -1,0 +1,60 @@
+<div class="container mt-5">
+    <div class="col-8">
+        <div class="alert alert-info pb-1" *ngIf="addForm.dirty">
+            <p><strong>Information: </strong> You have added some information. Any unsaved changes will be lost.</p>
+        </div>
+    </div>
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3>Add Book</h3>
+      </div>
+      <div class="card-body">
+        <form #addForm="ngForm" id="addForm" (ngSubmit)="addBook()">
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input 
+                id="title" 
+                class="form-control"
+                name="title"
+                [(ngModel)]="book.title" />
+          </div>
+  
+          <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input 
+                id="author" 
+                class="form-control"
+                name="author"
+                [(ngModel)]="book.author"/>
+          </div>
+  
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea 
+                id="description"
+                class="form-control"
+                name="description"
+                [(ngModel)]="book.description"
+                rows="2">
+            </textarea>
+          </div>
+  
+          <div class="form-check mb-3">
+            <input 
+                id="isRead" 
+                type="checkbox"
+                class="form-check-input"
+                name="isRead"
+                [(ngModel)]="book.isRead" />
+            <label for="isRead" class="form-check-label">Read</label>
+          </div>
+  
+          <div class="d-flex justify-content-between">
+            <button type="submit" [disabled]="!addForm.dirty" form="addForm" class="btn btn-outline-primary" >Add Book</button>
+            <button type="button" class="btn btn-outline-secondary">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

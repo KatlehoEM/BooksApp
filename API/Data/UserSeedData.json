@@ -1,0 +1,129 @@
+[
+    {
+      "UserName": "Thabo",
+      "Email": "thabo@gmail.com",
+      "Books": [
+        {
+          "Id": 1,
+          "Date": "2022-01-15T14:30:00Z",
+          "Title": "To Kill a Mockingbird",
+          "Author": "Harper Lee",
+          "isRead": true,
+          "Description": "A novel about the serious issues of rape and racial inequality.",
+          "Username": "thabo"
+        },
+        {
+          "Id": 2,
+          "Date": "2022-07-20T10:15:00Z",
+          "Title": "1984",
+          "Author": "George Orwell",
+          "isRead": false,
+          "Description": "A dystopian novel set in a totalitarian society under constant surveillance.",
+          "Username": "thabo"
+        },
+        {
+          "Id": 3,
+          "Date": "2024-06-09T09:45:00Z",
+          "Title": "The Great Gatsby",
+          "Author": "F. Scott Fitzgerald",
+          "isRead": true,
+          "Description": "A novel about the American dream and the roaring twenties.",
+          "Username": "thabo"
+        },
+        {
+          "Id": 4,
+          "Date": "2024-06-09T14:30:00Z",
+          "Title": "Moby-Dick",
+          "Author": "Herman Melville",
+          "isRead": false,
+          "Description": "A novel about the voyage of the whaling ship Pequod.",
+          "Username": "thabo"
+        }
+      ]
+    },
+    {
+      "UserName": "Neo",
+      "Email": "neo@gmail.com",
+      "Books": [
+        {
+          "Id": 5,
+          "Date": "2022-02-10T11:30:00Z",
+          "Title": "Pride and Prejudice",
+          "Author": "Jane Austen",
+          "isRead": true,
+          "Description": "A romantic novel about manners and matrimonial machinations.",
+          "Username": "neo"
+        },
+        {
+          "Id": 6,
+          "Date": "2022-08-25T16:00:00Z",
+          "Title": "The Catcher in the Rye",
+          "Author": "J.D. Salinger",
+          "isRead": false,
+          "Description": "A novel about the challenges of teenage life and rebellion.",
+          "Username": "neo"
+        },
+        {
+          "Id": 7,
+          "Date": "2024-06-09T10:00:00Z",
+          "Title": "Brave New World",
+          "Author": "Aldous Huxley",
+          "isRead": true,
+          "Description": "A novel set in a futuristic world of genetically modified citizens.",
+          "Username": "neo"
+        },
+        {
+          "Id": 8,
+          "Date": "2024-06-09T15:45:00Z",
+          "Title": "Jane Eyre",
+          "Author": "Charlotte Bronte",
+          "isRead": false,
+          "Description": "A novel about the experiences of the orphan Jane Eyre.",
+          "Username": "neo"
+        }
+      ]
+    },
+    {
+      "UserName": "Limo",
+      "Email": "limo@gmail.com",
+      "Books": [
+        {
+          "Id": 9,
+          "Date": "2022-03-15T12:45:00Z",
+          "Title": "War and Peace",
+          "Author": "Leo Tolstoy",
+          "isRead": true,
+          "Description": "A novel that chronicles the history of the French invasion of Russia.",
+          "Username": "limo"
+        },
+        {
+          "Id": 10,
+          "Date": "2022-09-30T09:30:00Z",
+          "Title": "Crime and Punishment",
+          "Author": "Fyodor Dostoevsky",
+          "isRead": false,
+          "Description": "A novel about the mental anguish and moral dilemmas of a poor ex-student.",
+          "Username": "limo"
+        },
+        {
+          "Id": 11,
+          "Date": "2024-06-09T11:15:00Z",
+          "Title": "The Brothers Karamazov",
+          "Author": "Fyodor Dostoevsky",
+          "isRead": true,
+          "Description": "A philosophical novel that explores ethical debates and moral issues.",
+          "Username": "limo"
+        },
+        {
+          "Id": 12,
+          "Date": "2024-06-09T17:30:00Z",
+          "Title": "Wuthering Heights",
+          "Author": "Emily Bronte",
+          "isRead": false,
+          "Description": "A novel about the intense and almost demonic love between Catherine Earnshaw and Heathcliff.",
+          "Username": "limo"
+        }
+      ]
+    }
+  ]
+  

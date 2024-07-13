@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for bookkestt on 2024-07-13T16:45:17+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bookkestt'
+primary_region = 'jnb'
+
+[build]
+  image = 'katlehoem/bookcollectiontracker:latest'
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  DATABASE_URL= "file:/data/sqlite.db"
+
+[mounts]
+  source="data"
+  destination="/data"
+
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
